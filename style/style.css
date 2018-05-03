@@ -1,0 +1,129 @@
+p{
+	font-size: 20px;
+}
+h1{
+	text-align: center;
+}
+
+   
+.container {
+    position: relative;
+}
+
+body{
+	/*background:linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);*/
+	/*background: linear-gradient(to right, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%);*/
+	/*background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);*/
+	background-color: #66ffff;
+
+}
+
+.name {
+    position: absolute;
+    top: 8px;
+    right: 200px;
+    font-size: 18px;
+    color:pink;
+}
+
+.password {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+	color:pink;
+}
+.inicio{
+	position: absolute;
+    top: 8px;
+    right: 400px;
+    font-size: 18px;
+   	font-weight: bold;
+}
+.login{
+ 	position: absolute;
+    top: 90px;
+    right:-5px;
+    font-size: 18px;
+}
+#log{
+	right:150px;
+}
+.salir{
+	position: absolute;
+    top: 30px;
+    right:10px;
+    font-size: 18px;
+}
+.nombres{
+	position:absolute;
+
+	bottom:0;
+	right:0;
+
+}
+#logo{
+	position:absolute;
+	top:0;
+	width:200px;
+	height:200px;
+}
+
+.colaboradores{
+	position:absolute;
+	bottom:10px;
+	right:10px;
+}
+.amigos{
+	position:relative;
+	top:100px;
+	left:400px;
+
+}
+/*
+.mata{
+	left:400px;
+	top:50px;
+}
+
+
+*/
+.inicio{
+	position: absolute;
+	left:10px;
+	top:10px;
+	background-color:white;
+	height:34px;
+	width:59.17px;
+}
+.boton{
+	background-color:white;
+}
+
+.grupo{
+	position:absolute;
+	right:10px;
+	top:10px;
+}
+.registrado{
+	position: absolute;
+    top: 8px;
+    right: 20px;
+    font-size: 18px;
+    color:pink;
+}
+.publicaciones{
+position:absolute;
+  height:790px;
+  width: 500px;
+  border:1px solid grey;
+  left:600px;
+
+
+}
+
+
+
+
+
+
