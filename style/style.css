@@ -1,15 +1,22 @@
-.texto {
-	font-size: 18px;
-	background-color: white;
+p{
+	font-size: 20px;
 }
+h1{
+	text-align: center;
+}
+
    
 .container {
-    position: relative;
+    position: relative
+    top:40%	;   
 }
 
 body{
-	font-family: "FreeSans";
-	background-color: #538DB0;
+	/*background:linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);*/
+	/*background: linear-gradient(to right, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%);*/
+	/*background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);*/
+	background-color: #8c8c8c;
+
 }
 
 .name {
@@ -99,7 +106,7 @@ body{
 	right:10px;
 	top:10px;
 }
-.registrado {
+.registrado{
 	position: absolute;
     top: 8px;
     right: 20px;
@@ -118,65 +125,79 @@ position:absolute;
 	position: absolute;
     display: inline-block;
     text-align: center;
-    width: 28%;
-    left: 36%;
-    top: 5%;
-    font-size: 18px;
-    padding: 0px 17px 17px 17px;
-    border-radius: 3px;
-    background-color: white;
-    box-shadow: 1px 1px 5px;
+    width: 37%;
+    left:31.5%;
+    font-size: 20px;
+
 }
 
 .registro{
-    width: 90%;
-    padding: 18px 22px;
-    margin: 10px 4px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
-    border-style: hidden hidden solid hidden;
+    border-radius: 4px;
     box-sizing: border-box;
-    font-size: 14px;
-    background-color: white;
-    outline: none;
 }
-
-.registro:focus {
-	border: 2px solid #28ADF1;
-	border-style: hidden hidden solid hidden;
-	color: #28ADF1;;
-}
-
 .boton{
-    background: #58D2A1;
+    background-color: #4CAF50;
     border: none;
-    color: white;
-    padding: 14px 25px;
+    color: black;
+    padding: 10px 27px;
     text-align: center;
+    text-decoration: none;
     display: inline-block;
-    font-size: 24px;
-    margin: 14px 2px 2px 2px;
+    font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
 }
 
-.tituloRegistro {
-    text-align: center;
-    color: #4C638E;
+
+
+
+
+.bg-1 { 
+      background-color: #474e5d; /* Dark Blue */
+      color: #ffffff;
+  }
+
+ 
+  p {
+  	font-size: 16px;
+  }
+  .margin {
+  	margin-bottom: 45px;
+  }
+  .bg-1 { 
+      background-color: white; /* Green */
+      color: #ffffff;
+  }
+  .bg-2 { 
+      background-color: #474e5d; /* Dark Blue */
+      color: #ffffff;
+  }
+  .bg-3 { 
+      background-color: #ffffff; /* White */
+      color: #555555;
+  }
+  .bg-4 { 
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+  }
+ 
+  .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+      color: #1abc9c !important;
+  }
+.fotito{
+	left:100px;
 }
-
-.tituloDiv {
-
-}
-
-.boton:hover {
-    background: #38D2A1;
-}
-
-
-
-
-
-
-
-
-
