@@ -1,4 +1,4 @@
-<!DOCTYPE html>.
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Lost&Found UNISON</title>
@@ -10,37 +10,29 @@
   <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-
-<div class="container">
- <h1>Lost&Found Unison</h1>
-  
+<div class="container-fluid bg-1 text-center" style="max-height: 18vh; overflow:hidden;">
+     <div class="logo">
+      <img src="img/logo.jpg"  style= "height: 18vh;" alt="logo" class = "logoLost">
+     </div>
+<!--
+     <div class="btn-group grupo">
+      <a href="index.php"><button type="button" class="btn btn-danger salir" >Salir</button></a>
+    </div>-->
 </div>
-<div class="registrado">
-  <p>Usuario:Alumno</p>
-</div>
+<div class="container-fluid bg-2 text-center" style=" width:70%; height:100vh;">
 
-
-
-<div class="btn-group grupo">
-  <a href="index.php"><button type="button" class="btn btn-danger salir" >Salir</button></a>
-</div>
-
-<div>
-  
-  <img id= "logo" src="unison.png" alt= "Unison">
-</div>
- <div class="publicaciones">
-    <p style="position:relative;left:35%;">Publicaciones</p>
-    <label for="comment">Objeto Perdido/Encontrado:</label>
-  <textarea class="form-control" rows="1" id="comment"></textarea>
-  <label for="comment">Descripción:</label>
-  <textarea class="form-control" rows="5" id="comment"></textarea>
-  <button type="button" class="btn btn-success" style="position:relative; top:10px">Publicar</button>
 </div>
 
 
-<a href="colaboradores.php" class="btn btn-info colaboradores" role="button">Colaboradores </a>
+
+
+<footer class="container-fluid bg-4 text-center" style="height:20vh; position:bottom; ">
+  <p style="font-size: 25px;">Universidad de Sonora</p> 
+   <img src="img/ebir.jpg" class="img-responsive margin" style=" position:relative;   width:8%; left:46%;" alt="ebir">
+</footer>
 
 
 </body>
 </html>
+
+
