@@ -11,10 +11,10 @@
 </head>
 <body>
 
-<div class="container-fluid bg-1 text-center" style=" max-height: 24vh; overflow:hidden;">
+<div class="container-fluid bg-1 text-center" style=" max-height: 18vh; overflow:hidden;">
   
      <div class="logo">
-      <img src="img/logo.jpg"  style= "height: 24vh;" alt="logo" class = "logoLost">
+      <img src="img/logo.jpg"  style= "height: 18vh;" alt="logo" class = "logoLost">
      </div>
 
     <div class="form-group name">
@@ -40,12 +40,12 @@
 
 <div>
   
-  <img id= "logo" src="unison.png" alt= "Unison" style=" height: 24vh;object-fit: contain;">
+  <img id= "logo" src="unison.png" alt= "Unison" style=" height: 18vh;object-fit: contain;">
 </div>
 <!-- Second Container -->
 <div class="container-fluid bg-2 text-center" style=" width:100%; height:60vh;">
   <h3 class="margin">Quienes Somos?</h3>
-  <p>Somos un grupo de estudiantes de la Universidad de Sonora, que nos preocupamos por la integridad de nuestra institución. </p>
+  <p>Somos grupo de estudiantes de la Universidad de Sonora interesados en estimular valores de honestidad en nuestra institución</p>
   <!--<img src="img/uni.jpg" class="img-responsive img-circle margin fotito" style="display:inline" alt="Unison" width="500" height="350">-->
   <div class="col-sm-4"> 
   
