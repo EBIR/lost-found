@@ -14,7 +14,7 @@ body{
 	/*background:linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);*/
 	/*background: linear-gradient(to right, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%);*/
 	/*background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);*/
-	background-color: #66ffff;
+	background-color: #8c8c8c;
 
 }
 
@@ -118,9 +118,42 @@ position:absolute;
   width: 500px;
   border:1px solid grey;
   left:600px;
+}
 
+.formRegistro{
+	position: absolute;
+    display: inline-block;
+    text-align: center;
+    width: 37%;
+    left:31.5%;
+    font-size: 20px;
 
 }
+
+.registro{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.boton{
+    background-color: #4CAF50;
+    border: none;
+    color: black;
+    padding: 10px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+
 
 
 
