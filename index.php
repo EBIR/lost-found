@@ -48,7 +48,7 @@
   <p>Somos un grupo de estudiantes de la Universidad de Sonora, que nos preocupamos por la integridad de nuestra institución. </p>
   <!--<img src="img/uni.jpg" class="img-responsive img-circle margin fotito" style="display:inline" alt="Unison" width="500" height="350">-->
   <div class="col-sm-4"> 
-      
+  
       <img src="img/uni.jpg" class="img-responsive margin" style="width:100%" alt="Image">
   </div>
    <div class="col-sm-4"> 
@@ -56,16 +56,16 @@
       
   </div>
   <div class="col-sm-4"> 
-      <img src="img/amigos.png" class="img-responsive margin" style="width:100%" alt="Image">
+      <img src="img/amigos.png" class="img-responsive margin" style="width:100%" alt="amigos">
       
   </div>
 </div>
 
 
 <!-- Footer -->
-<footer class="container-fluid bg-4 text-center" style="height:16vh; ">
-  <p>Universidad de Sonora - EBIR</p> 
-  
+<footer class="container-fluid bg-4 text-center" style="height:20vh; ">
+  <p style="font-size: 25px;">Universidad de Sonora</p> 
+   <img src="img/ebir.jpg" class="img-responsive margin" style=" position:absolute;   width:8%; left:46%;" alt="ebir">
 </footer>
 
 <!--
