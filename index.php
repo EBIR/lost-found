@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Lost&Found Unison</title>
@@ -11,32 +10,56 @@
 </head>
 <body>
 
-<div class="container-fluid bg-1 text-center" style=" max-height: 18vh; overflow:hidden;">
+<div class="container-fluid bg-1 text-center" style=" max-height: 24vh; overflow:hidden;">
   
      <div class="logo">
       <img src="img/logo.jpg"  style= "height: 18vh;" alt="logo" class = "logoLost">
      </div>
 
-    <div class="form-group name">
-      <label for="usr">Name:</label>
-      <input type="text" class="form-control" id="usr">
-    </div>
-    <div class="form-group password">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd">
-    </div> 
+      
+  
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto; border-radius:3px;" class ="botonlogin">Login</button>
 
-
-
-    <div class="btn-group grupo">
-      <a href="home.php"><button type="button" class="btn btn-success login" id="log">Iniciar Sesión</button>.</a>
-      <a href="userform.php"><button type="button" class="btn btn-warning login">Registrarse</button>.</a>
-
+<div id="id01" class="modal boton">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <p><strong>INICIAR SESIÓN  </strong></p>
     </div>
 
- 
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button"  onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+     
+    </div>
+  </form>
 </div>
 
+<script>
+
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+    <a href="userform.html"><button type="button" class="btn btn-warning registrar">Registrarse</button>.</a>
+
+</div>
 
 <div>
   

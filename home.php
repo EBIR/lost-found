@@ -24,8 +24,6 @@
 </div>
 
 
-
-
 <footer class="container-fluid bg-4 text-center" style="height:20vh; position:bottom; ">
   <p style="font-size: 25px;">Universidad de Sonora</p> 
    <img src="img/ebir.jpg" class="img-responsive margin" style=" position:relative;   width:8%; left:46%;" alt="ebir">
