@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == FALSE) {
+  header('Location: index.php');
+}
+?>
 <!DOCTYPE html>.
 <html lang="en">
 <head>
@@ -13,16 +19,16 @@
 
 <div class="container">
  <h1>Lost&Found Unison</h1>
-  
 </div>
+
 <div class="registrado">
-  <p>Usuario:Alumno</p>
+  <p>Hola <?php echo $_SESSION['usuario'] ?></p>
 </div>
 
 
 
 <div class="btn-group grupo">
-  <a href="index.php"><button type="button" class="btn btn-danger salir" >Salir</button></a>
+  <a href="logout.php"><button type="button" class="btn btn-danger salir" >Salir</button></a>
 </div>
 
 <div>

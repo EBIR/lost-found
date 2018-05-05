@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == TRUE) {
+  header('Location: home.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +18,25 @@
 </head>
 <body>
 
+<?php 
+include 'utility.php';
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+  if(buscarUsuario("nombre_usuario", $_POST['usuario'])) {
+    $usuario = obtenerUsuario("nombre_usuario", $_POST['usuario']);
+
+    $password = hash('sha256', $_POST['password']);
+
+    if($password === $usuario['password']) {
+      $_SESSION['nombre'] = $usuario['nombre'];
+      $_SESSION['usuario'] = $usuario['nombre_usuario'];
+      $_SESSION['correo'] = $usuario['email'];
+      $_SESSION['logged_in'] = TRUE;
+    }
+  }
+}
+?>
+
 <div class="container-fluid bg-1 text-center" style=" max-height: 24vh; overflow:hidden;">
   
      <div class="logo">
@@ -19,17 +45,19 @@
 
     <div class="form-group name">
       <label for="usr">Name:</label>
-      <input type="text" class="form-control" id="usr">
+      <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+      <input type="text" class="form-control" id="usr" name="usuario">
     </div>
     <div class="form-group password">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd">
+      <input type="password" class="form-control" id="pwd" name="password">
     </div> 
 
 
 
     <div class="btn-group grupo">
-      <a href="home.php"><button type="button" class="btn btn-success login" id="log">Iniciar Sesión</button>.</a>
+      <button type="submit" class="btn btn-success login" id="log">Iniciar Sesión</button>
+      </form>
       <a href="userform.php"><button type="button" class="btn btn-warning login">Registrarse</button>.</a>
 
     </div>

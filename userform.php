@@ -22,7 +22,7 @@
 
 			<input type="text" required="required" name="correo" class="registro" placeholder="Correo institucional"><br/>
 
-			<a href="index.php"><input type="submit" class="registro boton" value="Registrar" ></a>
+			<input type="submit" class="registro boton" value="Registrar">
 		</form>
 	</div>
 
