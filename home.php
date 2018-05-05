@@ -4,7 +4,7 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == FALSE) {
   header('Location: index.php');
 }
 ?>
-<!DOCTYPE html>.
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Lost&Found UNISON</title>
@@ -16,10 +16,10 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == FALSE) {
   <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-
-<!--<div class="registrado">
-  <p>Hola <?php /*echo $_SESSION['usuario'] */?></p>
-</div>-->
+<a href="logout.php">Salir</a>
+<div class="registrado">
+  <p><?php echo $_SESSION['usuario'] ?></p>
+</div>
 <div class="container-fluid bg-1 text-center" style="max-height: 18vh; overflow:hidden;">
      <div class="logo">
       <img src="img/logo.jpg"  style= "height: 18vh;" alt="logo" class = "logoLost">
@@ -31,7 +31,6 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == FALSE) {
 </div>
 <div class="container-fluid bg-2 text-center" style=" width:70%; height:100vh;">
 </div>
-
 
 <footer class="container-fluid bg-4 text-center" style="height:20vh; position:bottom; ">
   <p style="font-size: 25px;">Universidad de Sonora</p> 

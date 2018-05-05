@@ -3,7 +3,6 @@ session_start();
 if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == TRUE) {
   header('Location: home.php');
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +17,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == TRUE) {
 </head>
 <body>
 
-<?php 
+<?php
 include 'utility.php';
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -28,11 +27,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = hash('sha256', $_POST['password']);
 
     if($password === $usuario['password']) {
+      $_SESSION['id_usuario'] = $usuario['id'];
       $_SESSION['nombre'] = $usuario['nombre'];
       $_SESSION['usuario'] = $usuario['nombre_usuario'];
       $_SESSION['correo'] = $usuario['email'];
       $_SESSION['logged_in'] = TRUE;
     }
+  }
+
+  if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == TRUE) {
+    header('Location: home.php');
+  }
+  else {
+    echo '<script language="javascript">alert("Usuario o password incorrectos");</script>';
   }
 }
 ?>
@@ -82,7 +89,7 @@ window.onclick = function(event) {
     }
 }
 </script>
-    <a href="userform.html"><button type="button" class="btn btn-warning registrar">Registrarse</button>.</a>
+    <a href="userform.php"><button type="button" class="btn btn-warning registrar">Registrarse</button>.</a>
 
 </div>
 
