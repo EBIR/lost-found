@@ -50,7 +50,7 @@ header('Location: index.php');
         ?>
           <div>
             <h3><a href=" <?php echo "publication.php?id=".$row['hash_id']; ?> " onclick="document.myForm.submit()"><?php echo $row['titulo'] ?></a></h3>
-            <p> <?php echo $row['contenido']; ?> </p>
+            <?php echo "<p>".substr($row['contenido'], 0, 80)."</p>"; ?>
           </div>
         <?php
       }

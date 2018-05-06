@@ -6,7 +6,7 @@ $password = "";
 $dbname = "LostFound";
 
 function agregarUsuario($nombre, $apellido, $correo, $password, $nombreUsuario) {
-	$conn = new mysqli($servername, $username, "", $dbname);
+	$conn = new mysqli($GLOBALS['servername'], $GLOBALS['username'], "", $GLOBALS['dbname']);
 
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
