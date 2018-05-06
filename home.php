@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == FALSE) {
-  header('Location: index.php');
+header('Location: index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -17,6 +17,7 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == FALSE) {
 </head>
 <body>
 <a href="logout.php">Salir</a>
+<a href="publishform.php">Publicar objeto</a>
 <div class="registrado">
   <p><?php echo $_SESSION['usuario'] ?></p>
 </div>
@@ -30,6 +31,32 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == FALSE) {
     </div>-->
 </div>
 <div class="container-fluid bg-2 text-center" style=" width:70%; height:100vh;">
+  <?php
+
+    include 'utility.php';
+
+    $conn = new mysqli($servername, $username, "", $dbname);
+
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT * FROM Publicacion ORDER BY id DESC LIMIT 4;";
+
+    $result = $conn->query($sql);
+
+    if($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+        ?>
+          <div>
+            <h3><a href=" <?php echo "publication.php?id=".$row['hash_id']; ?> " onclick="document.myForm.submit()"><?php echo $row['titulo'] ?></a></h3>
+            <p> <?php echo $row['contenido']; ?> </p>
+          </div>
+        <?php
+      }
+    }
+
+  ?>
 </div>
 
 <footer class="container-fluid bg-4 text-center" style="height:20vh; position:bottom; ">
