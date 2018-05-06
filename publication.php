@@ -24,9 +24,13 @@ if(isset($_GET['id'])) {
 
 		$user = $user_result->fetch_assoc();
 
-		echo "<bold><h2>".$publication['titulo']."</h2></bold>";
+		echo "<b><h2>".$publication['titulo']."</h2></b>";
+		echo date( 'F jS', strtotime($publication['fecha']))." at ".date( 'g:i A', strtotime($publication['fecha']));
 		echo "<p>".$publication['contenido']."</p>";
-		echo "<bold>Por </bold>".$user['nombre'];
+		echo "<b>Por </b>".$user['nombre']."<br>";
+		?>
+			<a href="home.php">pagina de inicio</a>
+		<?php
 	}
 	else {
 		echo "Publicacion no encontrada";

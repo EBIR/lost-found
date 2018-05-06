@@ -29,7 +29,7 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == FALSE) {
 				    die("Connection failed: " . $conn->connect_error);
 				}
 
-				$sql = "INSERT INTO Publicacion (usuario_id, titulo, contenido, tipo, fecha, hash_id) values('".$_SESSION['id_usuario']."', '".$_POST['objeto']."', '".$_POST['descripcion']."', '".$_POST['tipo']."', CURDATE(), '".$id."');";
+				$sql = "INSERT INTO Publicacion (usuario_id, titulo, contenido, tipo, fecha, hash_id) values('".$_SESSION['id_usuario']."', '".$_POST['objeto']."', '".$_POST['descripcion']."', '".$_POST['tipo']."', CURRENT_TIMESTAMP(), '".$id."');";
 
 				if($conn->query($sql) === TRUE) {
 					?> 

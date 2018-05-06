@@ -24,6 +24,7 @@ if(agregarUsuario($_POST['nombre'], $_POST['apellido'], $_POST['correo'], $passw
 		<p class="texto">
 			<?php echo $_POST['nombre']." ".$_POST['apellido']." te has logrado registrar"; ?>		
 		</p>
+		<a href="index.php">Volver</a>
 	</div>
 	<?php
 }
