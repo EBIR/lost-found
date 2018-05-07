@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = hash('sha256', $_POST['password']);
 
     if($password === $usuario['password']) {
-      $_SESSION['id_usuario'] = $usuario['ID'];
+      $_SESSION['id_usuario'] = $usuario['id'];
       $_SESSION['nombre'] = $usuario['nombre'];
       $_SESSION['usuario'] = $usuario['nombre_usuario'];
       $_SESSION['correo'] = $usuario['email'];
