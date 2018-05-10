@@ -56,27 +56,4 @@ function obtenerUsuario($columna, $valor) {
 	return $result->fetch_assoc();
 }
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-
-function validarNombre($nombre){
-	$valido = TRUE; 
-	if (!preg_match("/^[a-zA-Z ]*$/",$nombre)) {
-  		$valido = FALSE;
-	}
-	return $valido;
-}
-
-function validarCorreo($correo){
-	$valido = TRUE;
-	if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
-  		$valido = FALSE;
-	}
-	return $valido;	
-}
-
 ?>
