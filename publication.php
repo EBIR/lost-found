@@ -1,44 +1,71 @@
-<?php 
-session_start();
-if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == FALSE) {
-  header('Location: home.php');
-}
-
-include 'utility.php';
-
-if(isset($_GET['id'])) {
-	$conn = new mysqli($GLOBALS['servername'], $GLOBALS['username'], "", $GLOBALS['dbname']);
-
-	if ($conn->connect_error) {
-	    die("Connection failed: " . $conn->connect_error);
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Publicación</title>
+</head>
+<body>
+	<?php 
+	session_start();
+	if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == FALSE) {
+	  header('Location: index.php');
 	}
 
-	$sql = "SELECT * FROM Publicacion where hash_id='".$_GET['id']."'";
+	include 'utility.php';
 
-	$result = $conn->query($sql);
+	if(isset($_GET['id'])) {
+		$conn = new mysqli($GLOBALS['servername'], $GLOBALS['username'], "", $GLOBALS['dbname']);
 
-	if($result->num_rows > 0) {
-		$publication = $row = $result->fetch_assoc();
+		if ($conn->connect_error) {
+		    die("Connection failed: " . $conn->connect_error);
+		}
 
-		$user_result = $conn->query("SELECT nombre FROM Usuario where id='".$publication['usuario_id']."'");
+		$sql = "SELECT * FROM Publicacion where hash_id='".$_GET['id']."'";
 
-		$user = $user_result->fetch_assoc();
+		$result = $conn->query($sql);
 
-		echo "<b><h2>".$publication['titulo']."</h2></b>";
-		echo date( 'F jS', strtotime($publication['fecha']))." at ".date( 'g:i A', strtotime($publication['fecha']));
-		echo "<p>".$publication['contenido']."</p>";
-		echo "<b>Por </b>".$user['nombre']."<br>";
-		?>
-			<a href="home.php">pagina de inicio</a>
-		<?php
+		if($result->num_rows > 0) {
+			$publication  = $result->fetch_assoc();
+
+			$user_result = $conn->query("SELECT nombre FROM Usuario where id='".$publication['usuario_id']."'");
+
+			$user = $user_result->fetch_assoc();
+
+			echo "<b><h2>".$publication['titulo']."</h2></b>";
+			echo date( 'F jS', strtotime($publication['fecha']))." at ".date( 'g:i A', strtotime($publication['fecha']));
+			echo "<p>".$publication['contenido']."</p>";
+			echo "<b>Por </b>".$user['nombre']."<br>";
+
+			?>
+				<a href="home.php">pagina de inicio</a>
+				<form action= "procesoComentario.php" method="post">
+					<textarea name="comentario" class="registro" placeholder="Comentario..."></textarea>
+					<input type="hidden" name="publicacion_id" value=" <?php echo $publication['ID'] ?>">
+					<input type="hidden" name="usuario_id" value=" <?php echo $publication['usuario_id'] ?> ">
+					<input type="hidden" name="hash_id" value=" <?php echo $publication['hash_id'] ?> ">
+					<input type="submit" class="registro boton" value="publicar">
+				</form>
+			<?php
+
+			$sql = "SELECT * FROM Comentarios WHERE publicacion_id='".$publication['ID']."'";
+
+			$result = $conn->query($sql);
+
+			if($result->num_rows > 0) {
+      			while($row = $result->fetch_assoc()) {
+        			echo "<p>".$row['contenido']."</p>";
+      			}
+    		}
+		
+		}
+		else {
+			echo "Publicacion no encontrada";
+		}
 	}
 	else {
-		echo "Publicacion no encontrada";
+		header('Location: home.php');
 	}
-}
-else {
-	header('Location: home.php');
-}
+	?>
 
-?>
+</body>
+</html>
 
