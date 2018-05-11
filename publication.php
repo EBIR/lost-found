@@ -30,7 +30,7 @@
 
 			$user = $user_result->fetch_assoc();
 
-			echo "<b><h2>".$publication['titulo']."</h2></b>";
+			echo "<b><h3>".$publication['titulo']."</h3></b>";
 			echo date( 'F jS', strtotime($publication['fecha']))." at ".date( 'g:i A', strtotime($publication['fecha']));
 			echo "<p>".$publication['contenido']."</p>";
 			echo "<b>Por </b>".$user['nombre']."<br>";
@@ -50,8 +50,10 @@
 
 			$result = $conn->query($sql);
 
+			echo "<b><h3>Comentarios</h3></b>";
 			if($result->num_rows > 0) {
       			while($row = $result->fetch_assoc()) {
+      				echo "<b>".$user['nombre']."</b><br>";
         			echo "<p>".$row['contenido']."</p>";
       			}
     		}
