@@ -30,10 +30,53 @@ header('Location: index.php');
 </header>
 <div class="col-sm-2 sidenav" style="background-color: #8c8c8c; width:auto;">
       <p>Usuario: <?php echo $_SESSION['usuario'] ?></p>
-      <a href="publishform.php" >Publicar objeto<br/></a>
-      <a href="logout.php" style="color:red!important">Salir</a>
-  </div>
+      <button onclick="document.getElementById('id01').style.display='block'" style="width:auto; border-radius:3px;">Publicar Objeto<br></button>
+      <div id="id01" class="modal boton">
+  
+  <form class="modal-content animate" action="procesoPublicar.php" method="post">
+    <div class="imgcontainer">
+      <p><strong>Publicar Objeto</strong></p>
+    </div>
 
+    <div class="container">
+      <input type="text" required="required" name="objeto" class="registro" placeholder="Nombre del objeto"><br/>
+
+        Perdido
+        <input type="radio" value="Perdido" name="tipo" checked>
+
+        Encontrado
+        <input type="radio" value="Encontrado" name="tipo">
+
+        <input type="text" required="required" name="contacto" class="registro" placeholder="Contacto (email, teléfono, ...)"><br/>
+
+        <textarea name="descripcion" class="registro" placeholder="Descripción..."></textarea>
+
+        <input type="submit" class="registro boton" value="publicar">
+
+        <a href="home.php"><input class="registro boton" type="button" value="Cancelar"></a>
+      
+    </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+       <button type="button"  onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+     
+        </div>
+    </form>
+  </div>
+    
+      <a href="logout.php"><button type="button" class="btn btn-danger" style="width:auto; position:absolute;">Salir</button></a>
+     
+</div>
+<script type="text/javascript">
+  var modal1 = document.getElementById('id01');
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal1) {
+          modal1.style.display = "none";
+      }
+     
+  } 
+</script>
 
 <div class="container-fluid bg-2 text-center" style=" width:70%; height:100vh;">
   <?php
