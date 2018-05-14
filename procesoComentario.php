@@ -22,8 +22,8 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == FALSE) {
 	    	die("Connection failed: " . $conn->connect_error);
 		}
 
-		$sql = "INSERT INTO Comentarios(usuario_id, contenido, publicacion_id)
-		 values('".$_POST['usuario_id']."', '".$_POST['comentario']."', '".$_POST['publicacion_id']."');";
+		$sql = "INSERT INTO Comentarios(usuario_id, contenido, publicacion_id,fecha)
+		 values('".$_POST['usuario_id']."', '".$_POST['comentario']."', '".$_POST['publicacion_id']."',CURRENT_TIMESTAMP());";
 
 		if($conn->query($sql) === TRUE){
 			$hash_id = substr($_POST['hash_id'], 1, strlen($_POST['hash_id']) - 2);

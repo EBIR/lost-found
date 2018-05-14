@@ -53,8 +53,9 @@
 			echo "<b><h3>Comentarios</h3></b>";
 			if($result->num_rows > 0) {
       			while($row = $result->fetch_assoc()) {
-      				echo "<b>".$user['nombre']."</b><br>";
-        			echo "<p>".$row['contenido']."</p>";
+      				echo "<b>".$user['nombre']."	</b>";
+      				echo date( 'F jS', strtotime($row['fecha']))." at ".date( 'g:i A', strtotime($row['fecha']));
+        			echo "<br><p>".$row['contenido']."</p>";
       			}
     		}
 		
