@@ -16,12 +16,10 @@ header('Location: index.php');
   <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-<a href="logout.php">Salir</a>
-<a href="publishform.php">Publicar objeto</a>
-<div class="registrado">
-  <p><?php echo $_SESSION['usuario'] ?></p>
-</div>
-<div class="container-fluid bg-1 text-center" style="max-height: 18vh; overflow:hidden;">
+
+
+
+<header class="container-fluid bg-1 text-center" style="max-height: 18vh; overflow:hidden;">
      <div class="logo">
       <img src="img/logo.jpg"  style= "height: 18vh;" alt="logo" class = "logoLost">
      </div>
@@ -29,7 +27,14 @@ header('Location: index.php');
      <div class="btn-group grupo">
       <a href="index.php"><button type="button" class="btn btn-danger salir" >Salir</button></a>
     </div>-->
-</div>
+</header>
+<div class="col-sm-2 sidenav" style="background-color: #8c8c8c; width:auto;">
+      <p>Usuario: <?php echo $_SESSION['usuario'] ?></p>
+      <a href="publishform.php" >Publicar objeto<br/></a>
+      <a href="logout.php" style="color:red!important">Salir</a>
+  </div>
+
+
 <div class="container-fluid bg-2 text-center" style=" width:70%; height:100vh;">
   <?php
 
@@ -57,7 +62,10 @@ header('Location: index.php');
     }
 
   ?>
+
 </div>
+
+
 
 <footer class="container-fluid bg-4 text-center" style="height:20vh; position:bottom; ">
   <p style="font-size: 25px;">Universidad de Sonora</p> 
