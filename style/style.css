@@ -9,6 +9,7 @@ h1{
 .container {
     position: relative
     top:40%	;   
+    width:100%;
 }
 
 body{
@@ -141,6 +142,7 @@ position:relative;
     border-radius: 10px;
     box-sizing: border-box;
 }
+
 .boton{
     background-color: #4CAF50;
     border: none;
@@ -149,7 +151,7 @@ position:relative;
     text-align: center;
     display: inline-block;
     font-size: 16px;
-    font-family: cursive;
+    /*font-family: cursive;*/
     text-decoration-color: white;
     margin: 4px 2px;
     cursor: pointer;
@@ -326,7 +328,7 @@ span.psw {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 40%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -379,21 +381,20 @@ span.psw {
 
 
 
-.botonlogin{
-  position:absolute;
-  color:white;
-  background-color: green;
-  border-radius: 3px;
-  width:auto;
-  right:10%;
-  top:10%;
+.botonlogin, .registrar{
+    margin-top: -6ch;
+    position: relative;
+    color: white;
+    background-color: green;
+    border-radius: 3px;
+    width: auto;
+    float: right;
+    margin-left: 20px;
+    display:flex;
+    height:6ch!important;
+
+}
+.registrar{
+  background-color: orange;
 }
 
-.registrar{
-    position: absolute;
-    top:10%;
-    right: 20px;
-    font-size: 18px;
-    color:white;
-    width:auto;
-}

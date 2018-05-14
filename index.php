@@ -51,6 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
      </div>
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto; border-radius:3px;" class ="botonlogin">Login</button>
+<button onclick="document.getElementById('id02').style.display='block'" style="width:auto; border-radius:3px;" class ="registrar">Registrarse</button>
 
 <div id="id01" class="modal boton">
   
@@ -76,25 +77,55 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
   </form>
 </div>
-
-<script>
-
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-    <a href="userform.php"><button type="button" class="btn btn-warning registrar">Registrarse</button>.</a>
-
 </div>
 
+<div id="id02" class="modal boton">
+  <form class="modal-content animate" action="procesoRegistro.php" method="post">
+    <div class="imgcontainer">
+      <p><strong>Registro</strong></p>
+    </div>
+
+    <div class="container">
+			<input type="text" required="required" name="nombre" class="registro" placeholder="Nombre"><br/>
+
+			<input type="text" required="required" name="apellido" class="registro" placeholder="Apellido"><br/>
+
+			<input type="text" required="required" name="nombreUsuario" class="registro" placeholder="Nombre de usuario"><br/>
+
+			<input type="password" required="required" name="password" class="registro" placeholder="Contrase&ntilde;a"><br/>
+
+			<input type="password" required="required" name="passwordConfirm" class="registro" placeholder="Confirmar contrase&ntilde;a"><br/>
+
+			<input type="text" required="required" name="correo" class="registro" placeholder="Correo institucional"><br/>
+
+			<input type="submit" class="registro boton" value="Registrar">
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button"  onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+     
+    </div>
+  </form>
+</div>
+
+
+<script type="text/javascript">
+	var modal1 = document.getElementById('id01');
+	var modal2 = document.getElementById('id02');
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	    if (event.target == modal1) {
+	        modal1.style.display = "none";
+	    }
+	    if (event.target == modal2) {
+	        modal2.style.display = "none";
+	    }
+	}	
+</script>
+
+
+
 <div>
-  
   <img id= "logo" src="unison.png" alt= "Unison" style=" height: 18vh;object-fit: contain;">
 </div>
 <!-- Second Container -->
