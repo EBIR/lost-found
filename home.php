@@ -3,6 +3,14 @@ session_start();
 if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == FALSE) {
 header('Location: index.php');
 }
+$time = $_SERVER['REQUEST_TIME'];
+  $timeout_duration = 900;
+  if(isset($_SESSION['LAST_ACTIVITY']) && ($time- $_SESSION['LAST_ACTIVITY']) > $timeout_duration){
+    session_unset();
+    session_destroy();
+    header('Location: index.php');
+  }
+  $_SESSION['LAST_ACTIVITY'] = $time;
 ?>
 <!DOCTYPE html>
 <html lang="en">
