@@ -53,12 +53,12 @@ header('Location: index.php');
 
         <input type="submit" class="registro boton" value="publicar">
 
-       
+        <a href="home.php"><input class="registro boton" type="button" value="Cancelar"></a>
       
     </div>
 
         <div class="container" style="background-color:#f1f1f1">
-       <button type="button"  onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancelar</button>
+       <button type="button"  onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
      
         </div>
     </form>
