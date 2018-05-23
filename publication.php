@@ -9,14 +9,6 @@
 	if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == FALSE) {
 	  header('Location: index.php');
 	}
-	$time = $_SERVER['REQUEST_TIME'];
-	$timeout_duration = 60;
-	if(isset($_SESSION['LAST_ACTIVITY']) && ($time- $_SESSION['LAST_ACTIVITY']) > $timeout_duration){
-	  session_unset();
-	  session_destroy();
-	  header('Location: index.php');
-	}
-	$_SESSION['LAST_ACTIVITY'] = $time;
 
 	include 'utility.php';
 
@@ -48,7 +40,7 @@
 				<form action= "procesoComentario.php" method="post">
 					<textarea name="comentario" class="registro" placeholder="Comentario..."></textarea>
 					<input type="hidden" name="publicacion_id" value=" <?php echo $publication['ID'] ?>">
-					<input type="hidden" name="usuario_id" value=" <?php echo $publication['usuario_id'] ?> ">
+					<input type="hidden" name="usuario_id" value=" <?php echo $_SESSION['id_usuario'] ?> ">
 					<input type="hidden" name="hash_id" value=" <?php echo $publication['hash_id'] ?> ">
 					<input type="submit" class="registro boton" value="publicar">
 				</form>
@@ -61,7 +53,9 @@
 			echo "<b><h3>Comentarios</h3></b>";
 			if($result->num_rows > 0) {
       			while($row = $result->fetch_assoc()) {
-      				echo "<b>".$user['nombre']."	</b>";
+      				$result2 = getRows("Usuario", "ID", $row['usuario_id']);
+      				$user2 = $result2->fetch_assoc();
+      				echo "<b>".$user2['nombre']."	</b>";
       				echo date( 'F jS', strtotime($row['fecha']))." at ".date( 'g:i A', strtotime($row['fecha']));
         			echo "<br><p>".$row['contenido']."</p>";
       			}

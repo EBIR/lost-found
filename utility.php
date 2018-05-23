@@ -79,4 +79,17 @@ function validarCorreo($correo){
 	return $valido;	
 }
 
+function getRows($table, $column, $value) {
+	$conn = new mysqli($GLOBALS['servername'], $GLOBALS['username'], "", $GLOBALS['dbname']);
+
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
+
+	$result = $conn->query("SELECT * FROM ".$table." WHERE ".$column."='".$value."'");
+	$conn->close();
+
+	return $result;
+}
+
 ?>
