@@ -25,8 +25,21 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == FALSE) {
 		$sql = "INSERT INTO Comentarios(usuario_id, contenido, publicacion_id,fecha)
 		 values('".$_POST['usuario_id']."', '".$_POST['comentario']."', '".$_POST['publicacion_id']."',CURRENT_TIMESTAMP());";
 
-		if($conn->query($sql) === TRUE){
-			$hash_id = substr($_POST['hash_id'], 1, strlen($_POST['hash_id']) - 2);
+		 $hash_id = substr($_POST['hash_id'], 1, strlen($_POST['hash_id']) - 2);
+		 if($_POST['comentario'] == ""){
+		 	echo '<script language="javascript">alert("El comentario no se pudo procesar!");</script>';
+		 	?> 
+				<form name="myForm" action="publication.php" method="get">
+					<input type="hidden" name="id" value="<?php echo $hash_id ?>">
+				</form>
+
+				<script type="text/javascript">
+					setTimeout(function() { document.myForm.submit() }, 5)
+				</script>
+
+			<?php
+
+		 }else if($conn->query($sql) === TRUE){
 
 			?> 
 				<form name="myForm" action="publication.php" method="get">
