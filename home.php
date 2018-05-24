@@ -31,11 +31,9 @@ $time = $_SERVER['REQUEST_TIME'];
      <div class="logo">
       <img src="img/logo.jpg"  style= "height: 18vh;" alt="logo" class = "logoLost">
      </div>
-<!--
-     <div class="btn-group grupo">
-      <a href="index.php"><button type="button" class="btn btn-danger salir" >Salir</button></a>
-    </div>-->
 </header>
+
+
 <div class="col-sm-2 sidenav" style="background-color: #8c8c8c; width:auto;">
       <p>Usuario: <?php echo $_SESSION['usuario'] ?></p>
       <button onclick="document.getElementById('id01').style.display='block'" style="width:auto; border-radius:3px;">Publicar Objeto<br></button>
@@ -59,7 +57,7 @@ $time = $_SERVER['REQUEST_TIME'];
 
         <textarea name="descripcion" class="registro" placeholder="Descripción..."></textarea>
 
-        <input type="submit" class="registro boton" value="publicar">
+        <input type="submit" class="registro boton" value="publicar" style="color:white;">
 
        
       
@@ -105,8 +103,8 @@ $time = $_SERVER['REQUEST_TIME'];
       while($row = $result->fetch_assoc()) {
         ?>
       	<div class="container">
-		  <h3><a href=" <?php echo "publication.php?id=".$row['hash_id']; ?> " onclick="document.myForm.submit()"><?php echo 'Objeto '.$row['tipo'].': '.$row['titulo'] ?></a></h3>
-		  <div class="panel panel-default" style="color:black; margin: 0% 30%">
+		  <h3><a href=" <?php echo "publication.php?id=".$row['hash_id']; ?> " style="color:#4CAF50;" onclick="document.myForm.submit()"><?php echo 'Objeto '.$row['tipo'].': '.$row['titulo'] ?></a></h3>
+		  <div class="panel panel-default" style="color:black; margin: 0% 30%;  border: 3px solid #4CAF50;">
 		    <div class="panel-body"><?php echo "<p>".substr($row['contenido'], 0, 80)."</p>"; ?></div>
 		  </div>
 		</div>

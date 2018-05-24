@@ -67,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="password" required>
         
-      <button type="submit">Login</button>
+      <button type="submit" style="color:white;">Login</button>
       
     </div>
 
@@ -98,7 +98,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 			<input type="text" required="required" name="correo" class="registro" placeholder="Correo institucional"><br/>
 
-			<input type="submit" class="registro boton" value="Registrar">
+			<input type="submit" class="registro boton" value="Registrar" style="color:white;">
     </div>
 
     <div class="container" style="background-color:#f1f1f1">

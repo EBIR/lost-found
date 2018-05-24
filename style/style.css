@@ -383,4 +383,7 @@ span.psw {
 div.viewPublication{
     border: 1px solid powderblue;
 }
+h4{
+  text-align: right;
+}
 
