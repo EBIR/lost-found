@@ -74,7 +74,7 @@
 			?>
 				<a href="home.php">pagina de inicio</a>
 				<form action= "procesoComentario.php" method="post">
-					<textarea name="comentario" class="registro" placeholder="Comentario..."></textarea>
+					<textarea name="comentario" class="registro" placeholder="Comentario..." style="color:black;"></textarea>
 					<input type="hidden" name="publicacion_id" value=" <?php echo $publication['ID'] ?>">
 					<input type="hidden" name="usuario_id" value=" <?php echo $_SESSION['id_usuario'] ?> ">
 					<input type="hidden" name="hash_id" value=" <?php echo $publication['hash_id'] ?> ">
