@@ -105,7 +105,7 @@ $time = $_SERVER['REQUEST_TIME'];
       while($row = $result->fetch_assoc()) {
         ?>
           <div>
-            <h3><a href=" <?php echo "publication.php?id=".$row['hash_id']; ?> " onclick="document.myForm.submit()"><?php echo $row['titulo'] ?></a></h3>
+            <h3><a href=" <?php echo "publication.php?id=".$row['hash_id']; ?> " onclick="document.myForm.submit()"><?php echo 'Objeto '.$row['tipo'].': '.$row['titulo'] ?></a></h3>
             <?php echo "<p>".substr($row['contenido'], 0, 80)."</p>"; ?>
           </div>
         <?php
